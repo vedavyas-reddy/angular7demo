@@ -1,0 +1,7 @@
+/* Add application styles & import */
+
+.active{
+    background-color: #cccccc;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
