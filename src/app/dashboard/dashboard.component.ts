@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AlertComponent } from '../alert/alert.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class DashboardComponent implements OnInit {
 
-  @ViewChild('f') regForm :NgForm;
+  @ViewChild('f',{static: false}) regForm :NgForm;
 
   patient = {
     name : '',
@@ -17,7 +18,7 @@ export class DashboardComponent implements OnInit {
 
   submitted = false;
 
-  constructor() { }
+  constructor(private componentFactoryResolver : ComponentFactoryResolver) { }
 
   ngOnInit() {
   }
@@ -32,6 +33,15 @@ export class DashboardComponent implements OnInit {
      this.patient.mobile = this.regForm.value.mobile;
      this.submitted = true;
      this.regForm.reset();
+     this.showErrorAlert(this.patient.name);
+  }
+
+  onHandleError() {
+    this.submitted  = false;
+  }
+
+  private showErrorAlert(message : string) {
+    const alertCmpFactory =  this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
   }
 
 }

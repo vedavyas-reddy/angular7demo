@@ -11,6 +11,7 @@ import { Page404Component } from './page404/page404.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
+import { AlertComponent } from './alert/alert.component';
 // import { ApplyComponent } from './leaves/apply/apply.component';
 // import { BalanceComponent } from './leaves/balance/balance.component';
 // import { Page404leavesComponent } from './leaves/page404leaves/page404leaves.component';
@@ -25,6 +26,7 @@ import { AuthGuard } from './auth-guard.service';
     DashboardComponent,
     Page404Component,
     ProfileComponent,
+    AlertComponent
     // ApplyComponent,
     // BalanceComponent,
     // Page404leavesComponent,

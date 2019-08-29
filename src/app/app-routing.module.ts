@@ -11,13 +11,13 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
     { path: 'attendance', component: AttendanceComponent },
-    { path: 'leaves', loadChildren: () => import(`./leaves/leaves.module`).then(m => m.LeavesModule) },
+    { path: 'leaves', loadChildren: () => import('./leaves/leaves.module').then(m => m.LeavesModule) },
     { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
     { path: '**', component: Page404Component },
 ];
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes,{ enableTracing: false })
+        RouterModule.forRoot(routes,{ enableTracing: false, useHash : true })
     ],
     exports: [RouterModule]
 })

@@ -13,7 +13,7 @@ const routes: Routes = [
       {
         path: 'apply', component: ApplyComponent
       },
-      { path: 'balance', loadChildren: () => import(`./balance/balance.module`).then(m => m.BalanceModule) },
+      { path: 'balance', loadChildren: () => import('./balance/balance.module').then(m => m.BalanceModule) },
       {
         path: '', redirectTo: 'apply', pathMatch: 'full'
       },
